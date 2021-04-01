@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zora's Cube </title>
+    <style>
+        body{
+            background: orange;
+        }
+        #wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  perspective: 1500px;
+}
+
+.box-area {
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: rotate;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+.box {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #262626;
+}
+
+#bor_panel {
+  border-radius: 12px;
+  border: 2px solid #297293;
+  padding: 20px;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#bor_panel:hover img {
+  display: none;
+}
+
+#bor_panel:hover span {
+  margin: auto;
+}
+
+#box-front {
+  transform: translateX(-200px) translateY(-200px) translateZ(200px);
+  background-image: url(https://source.unsplash.com/featured/?work);
+}
+
+#box-back {
+  transform: translateX(-200px) translateY(-200px) translateZ(-200px);
+  background-image: url(https://source.unsplash.com/featured/?work);
+
+}
+
+#box-right {
+  transform: translateY(-200px) rotateY(90deg);
+  background-image: url(https://source.unsplash.com/featured/?work);
+}
+
+#box-left {
+  transform: translateY(-200px) translateX(-400px) rotateY(90deg);
+  background-image: url(https://source.unsplash.com/featured/?work);
+}
+
+#box-top {
+  transform: translateX(-200px) translateY(-400px) rotateX(90deg);
+  background: rgba(207, 153, 6, 0.5);
+}
+
+
+#box-bottom {
+  transform: translateX(-200px) rotateX(90deg);
+  background: rgba(207, 153, 6, 0.5);
+}
+
+.box-area {
+  transform: rotateX(90deg) rotateY(90deg);
+}
+
+    </style>
+</head>
+<body>
+   
+  <div id="wrapper">
+  <div class="box-area">
+    <div id="box-front" class="box"></div>
+    <div id="box-right" class="box"></div>
+    <div id="box-back" class="box"></div>
+    <div id="box-left" class="box"></div>
+    <div id="box-top" class="box"></div>
+    <div id="box-bottom" class="box"></div>
+  </div>
+</div>
+</body>
+</html>
